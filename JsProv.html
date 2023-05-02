@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">Hejsan</p>
+    <img id="picture", src="ChulSoon.jpg", width="10%" height="10%">
+    <form name="myForm">
+        <label form="firstName"> First Name: </label>
+        <br>
+        <input type="text" name="firstName" id="firstName">
+        <br>
+
+        <label form="lname"> Last name: </label>
+        <br>
+        <input type="text" name="lname" id="lname">
+        <br>
+
+        <label form="mail"> mail: </label>
+        <br>
+        <input type="text" name="mail" id="mail">
+        <br>
+        
+        <label form="Number"> Number: </label>
+        <br>
+        <input type="text" name="Number" id="number">
+        <br><br>
+
+        <input type="button" value="submit" onclick="formValue()">
+    </form>
+
+
+
+</script>
+    <script>
+        /*
+        Övning 1
+        Skriv en funktion som tar emot två tal som parametrar och returnerar dess summa.
+        */
+        function addNumbers(n1,n2)
+        {
+            return n1+n2
+        }
+        console.log(addNumbers(2,5)) 
+
+        /*
+        Övning 2
+        Använd metoden getElemendById för att hitta <p> elementet med id="demo" och
+        ändra dess text till "Hej".
+        */
+
+        document.getElementById("demo").innerHTML='Hej';
+
+        /*
+        Övning 3
+        Skriv en funktion som kan ändra värdet på en bilds src attribut till "bild.jpg".
+        */
+        function changePictureToCad(imageId)
+        {
+            document.getElementById(imageId).src='cad2.png';
+        }
+        changePictureToCad("picture")
+        
+        /*
+        Övning 4
+        Skriv en funktion som tar en array av tal och returnerar en ny array där varje elemnt i
+        den ursprungliga arrayen har blivit subtraherat med 1. (A nivå)
+        */
+        function arrayMinusOne(userArray)
+        {
+            const tempArray = []
+            for(number of userArray)
+            {
+                tempArray.push(number-1)
+            }
+            return tempArray
+        }
+        console.log(arrayMinusOne([1,2,3,4,5]))
+
+        /*
+        Övning 5
+        Skapa ett HTML-formulär med ett textfält och en knapp. När användaren klickar på 
+        knappen ska inehållet i textfältet visas i en alert-dialogruta. (C nivå)
+        */
+        function formValue(){
+            var FirstName = document.forms["myForm"]["firstName"].value
+            var LastName = document.forms["myForm"]["lname"].value
+            var Mail = document.forms["myForm"]["mail"].value
+            var Number = document.forms["myForm"]["number"].value
+
+            alert(`
+            First Name ${FirstName}
+            Last Name ${LastName}
+            Mail ${Mail}
+            Number ${Number}
+            `)
+        }
+
+    </script>   
+</body>
+</html>
+
